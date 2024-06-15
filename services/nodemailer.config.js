@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import "dotenv/config";
 
 export const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -9,9 +10,3 @@ export const transporter = nodemailer.createTransport({
     pass: process.env.PASSWORD,
   },
 });
-export const options = {
-  from: "Sender",
-  to: "Receiver",
-  subject: "Contact Message0",
-  html: <p> Hello </p>,
-};
