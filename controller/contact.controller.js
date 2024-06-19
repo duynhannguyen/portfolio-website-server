@@ -3,6 +3,11 @@ import nodemailer from "nodemailer";
 import "dotenv/config";
 const contactForm = (req, res) => {
   const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(401).json({ message: "missing data" });
+  }
+
   const emailBody = {
     to: "duynhannguyenn@gmail.com",
     subject: `${name} <${email}> has send for you a message`,
