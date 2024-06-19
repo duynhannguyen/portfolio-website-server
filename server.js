@@ -11,3 +11,4 @@ app.use("/api/v1", appRouter);
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
+export default app;
